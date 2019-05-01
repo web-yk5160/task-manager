@@ -8,5 +8,14 @@ var app = new Vue({
       { id: 4, name: 'Four', description: 'This is another complete todo', completed: true }
     ],
     message: 'Hello World!'
+  },
+  computed: {
+    completedTasks: function() {
+      return this.tasks.filter( item => item.completed == true );
+    },
+
+    todoTasks: function() {
+      return this.tasks.filter( item => item.completed == false );
+    }
   }
 })
