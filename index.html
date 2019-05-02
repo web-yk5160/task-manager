@@ -50,7 +50,25 @@
                </div>
                <div class="ui segment">
                  <form class="ui form">
-                   
+
+                   <input type="hidden" name="id" v-model="task.id" />
+
+                   <div class="field">
+                     <label>Name</label>
+                     <input type="text" name="name" placeholder="name" required="true" v-model="task.name" />
+                   </div>
+
+                   <div class="field">
+                     <label>description</label>
+                     <input type="text" name="description" placeholder="description" required="true" v-model="task.description" />
+                   </div>
+
+                   <div class="field inline">
+                     <label>Completed</label>
+                     <input type="checkbox" name="comoleted" v-model="task.completed" />
+                   </div>
+
+                   <button class="ui button green" type="submit">Update</button>
                  </form>
                </div>
              </div>
