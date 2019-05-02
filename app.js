@@ -63,7 +63,6 @@ var app = new Vue({
       }
     },
     createTask: function(event) {
-      event.preventDefault();
 
       if(!this.task.completed){
         this.task.completed = false;
@@ -93,7 +92,6 @@ var app = new Vue({
     },
     updateTask: function(event, id){
       event.stopImmediatePropagation();
-      event.preventDefault();
 
       let task = this.tasks.find(item => item.id == id);
 

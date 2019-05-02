@@ -56,7 +56,8 @@
                   </div>
                </div>
                <div class="ui segment">
-                 <form class="ui form" v-on:submit="updatetask($event, task.id)">
+                 <form class="ui form"
+                       v-on:submit.prevent="(action == 'create') ? createTask($event) : updateTask($event, task.id)">
 
                    <input type="hidden" name="id" v-model="task.id" />
 
@@ -75,12 +76,8 @@
                      <input type="checkbox" name="comoleted" v-model="task.completed" />
                    </div>
 
-                   <button class="ui button green" type="submit" v-if="action == 'create'" v-on:click="createTask($event, task.id)">
-                     Create
-                   </button>
-
-                   <button class="ui button green" type="submit" v-if="action == 'edit'" v-on:click="updateTask($event, task.id)">
-                     Update
+                   <button class="ui button green">
+                     Submit
                    </button>
                  </form>
                </div>
